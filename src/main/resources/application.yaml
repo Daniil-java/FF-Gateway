@@ -21,6 +21,7 @@ spring:
             - StripPrefix=1
             - PrefixPath=/ff-auth
             - JwtAuthFilter
+#            - - RoleAuth=ADMIN
         - id: PersonalArea
           uri: http://localhost:8192
           predicates:
@@ -45,6 +46,7 @@ spring:
             - StripPrefix=1
             - PrefixPath=/ff-menu
             - JwtAuthFilter
+
 
 jwt:
   secret: h4f8093h4f983yhrt9834hr0934hf0hf493g493gf438rh438th34g34g

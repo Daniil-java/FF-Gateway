@@ -3,6 +3,7 @@ package ru.findFood.gateway;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
@@ -25,5 +26,9 @@ public class JwtUtil {
 
     public boolean isInvalid(String token) {
         return this.isTokenExpired(token);
+    }
+
+    public boolean hasRole(ServerHttpRequest request, String role) {
+        return request.getHeaders().get("role").contains(role);
     }
 }
