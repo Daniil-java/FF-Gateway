@@ -29,6 +29,6 @@ public class JwtUtil {
     }
 
     public boolean hasRole(ServerHttpRequest request, String role) {
-        return request.getHeaders().get("role").contains(role);
+        return request.getHeaders().get("roles").contains(role);
     }
 }
