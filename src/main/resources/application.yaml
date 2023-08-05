@@ -9,12 +9,16 @@ spring:
       globalcors:
         corsConfigurations:
           '[/**]':
-            allowedOrigins: "*"
-            allowedMethods: "*"
+            allowedOrigins: "http://localhost:3000"
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
             allowedHeaders: "*"
       routes:                         #Необходимо внести соотв. изменения, по мере найстройки других сервисов
-        - id: auth-service              #Порт соединения. Context path
-          uri: http://localhost:8191
+        - id: auth              #Порт соединения. Context path
+          uri: http://localhost:8100
           predicates:
             - Path=/auth/**
           filters:
@@ -49,4 +53,4 @@ spring:
 
 
 jwt:
-  secret: h4f8093h4f983yhrt9834hr0934hf0hf493g493gf438rh438th34g34g
+  secret: 3979244226452948404D635166546A576E5A7234753778214125432A462D4A61
