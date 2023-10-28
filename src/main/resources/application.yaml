@@ -25,14 +25,14 @@ spring:
             - StripPrefix=1
             - PrefixPath=/ff-auth
             - JwtAuthFilter
-#            - - RoleAuth=ADMIN
+        #            - - RoleAuth=ADMIN
         - id: PersonalArea
-          uri: http://localhost:8192
+          uri: http://localhost:8188
           predicates:
-            - Path=/personalarea/**
+            - Path=/personal/**
           filters:
             - StripPrefix=1
-            - PrefixPath=/ff-personalarea
+            - PrefixPath=/ff-personal
             - JwtAuthFilter
         - id: rest
           uri: http://localhost:8189
@@ -43,7 +43,7 @@ spring:
             - PrefixPath=/ff-restaurants
             - JwtAuthFilter
         - id: menu
-          uri: http://localhost:8194
+          uri: http://localhost:8187
           predicates:
             - Path=/menu/**
           filters:
